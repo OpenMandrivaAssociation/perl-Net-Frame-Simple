@@ -1,24 +1,24 @@
 %define upstream_name    Net-Frame-Simple
 %define upstream_version 1.04
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
-Summary:    BSD loopback layer object
-License:    Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
+Summary:	BSD loopback layer object
+License:	Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Bit::Vector)
-BuildRequires: perl(Test::Pod::Coverage)
-BuildRequires: perl(Test::Pod)
-BuildRequires: perl(Net::IPv6Addr)
-BuildRequires: perl(Socket6)
-BuildRequires: perl(Net::Frame)
+BuildRequires:	perl-devel
+BuildRequires:	perl(Bit::Vector)
+BuildRequires:	perl(Test::Pod::Coverage)
+BuildRequires:	perl(Test::Pod)
+BuildRequires:	perl(Net::IPv6Addr)
+BuildRequires:	perl(Socket6)
+BuildRequires:	perl(Net::Frame)
 
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildArch:	noarch
 
 %description
 *Net::Frame* is a fork of *Net::Packet*. The goal here was to greatly
@@ -38,24 +38,23 @@ of the modularity *Net::Frame* offers. For an example, see
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 make test verbose=1
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Mon Oct 03 2011 Leonardo Coelho <leonardoc@mandriva.com> 1.40.0-1mdv2012.0
++ Revision: 702554
+- new mandriva version
+- Created package structure for 'perl-Net-Frame-Simple'.
 
