@@ -1,14 +1,14 @@
 %define upstream_name    Net-Frame-Simple
-%define upstream_version 1.04
+%define upstream_version 1.05
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Version:	%perl_convert_version 1.05
+Release:	1
 Summary:	BSD loopback layer object
 License:	Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/Net-Frame-Simple-1.05.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Bit::Vector)
@@ -57,4 +57,5 @@ make test verbose=1
 + Revision: 702554
 - new mandriva version
 - Created package structure for 'perl-Net-Frame-Simple'.
+
 
