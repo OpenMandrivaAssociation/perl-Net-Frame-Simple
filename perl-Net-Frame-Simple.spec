@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 1.05
-Release:	1
+Release:	2
 Summary:	BSD loopback layer object
 License:	Artistic
 Group:		Development/Perl
