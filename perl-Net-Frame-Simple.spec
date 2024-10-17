@@ -7,7 +7,7 @@ Release:	3
 Summary:	BSD loopback layer object
 License:	Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Net/Net-Frame-Simple-1.05.tar.gz
 
 BuildRequires:	perl-devel
