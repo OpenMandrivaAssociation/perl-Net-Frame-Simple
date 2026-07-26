@@ -1,13 +1,11 @@
 %define upstream_name    Net-Frame-Simple
-%define upstream_version 1.05
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.05
-Release:	3
+Version:	1.05
+Release:	4
 Summary:	BSD loopback layer object
 License:	Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
+Url:		https://metacpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Net/Net-Frame-Simple-1.05.tar.gz
 
 BuildRequires:	make
@@ -36,7 +34,7 @@ of the modularity *Net::Frame* offers. For an example, see
 *Net::Frame::Layer::ICMPv4* on my CPAN space.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
